@@ -20,18 +20,18 @@ public class InputRead : MonoBehaviour {
 	
 	}
 
-	void /// <summary>
+	//void /// <summary>
 	/// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
-	/// </summary>
+	// /// </summary>
 	void FixedUpdate()
 	{
 		
 	}
 
-	void /// <summary>
+	// void /// <summary>
 	/// LateUpdate is called every frame, if the Behaviour is enabled.
 	/// It is called after all Update functions have been called.
-	/// </summary>
+	// /// </summary>
 	void LateUpdate()
 	{
 		

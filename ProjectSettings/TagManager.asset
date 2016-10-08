@@ -46,9 +46,9 @@ TagManager:
   - name: Background
     uniqueID: 2661742757
     locked: 0
-  - name: Ground
-    uniqueID: 672726461
-    locked: 0
   - name: Dentes
     uniqueID: 146493937
+    locked: 0
+  - name: Ground
+    uniqueID: 672726461
     locked: 0
