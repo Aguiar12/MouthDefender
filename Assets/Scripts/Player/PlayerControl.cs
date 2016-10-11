@@ -14,23 +14,27 @@ public class PlayerControl : MonoBehaviour
     //private bool grounded = false;
     private Animator anim;
 
+    private Rigidbody2D rigidBodyRef;
+
     void Awake()
     {
         //groundCheck = transform.Find("groundCheck");
         anim = GetComponent<Animator>();
+        rigidBodyRef = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         //grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-
+/*
         if(Input.GetButtonDown("Jump"))
-            jump = true;
+            jump = true;*/
     }
 
     void FixedUpdate() 
     {
-        float h = Input.GetAxis("Horizontal");
+        
+        /*float h = Input.GetAxis("Horizontal");
 
         anim.SetFloat("Velocidade", Mathf.Abs(h));
 
@@ -55,8 +59,28 @@ public class PlayerControl : MonoBehaviour
 			GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce * 0.3f));
 
 			jump = false;
-		}
+		}*/
 	}
+
+    public void move(float inputForce){
+        anim.SetFloat("Velocidade",Mathf.Abs(inputForce));
+
+        if(inputForce * rigidBodyRef.velocity.x < maxSpeed){
+            rigidBodyRef.AddForce(Vector2.right * inputForce * moveForce);
+        }
+
+        if(inputForce * rigidBodyRef.velocity.x > maxSpeed){
+            rigidBodyRef.velocity = new Vector2(Mathf.Sign(rigidBodyRef.velocity.x) * maxSpeed, rigidBodyRef.velocity.y);
+
+        }
+
+        if(inputForce > 0 && !facingRight)
+			Flip();
+		else if(inputForce < 0 && facingRight)
+			Flip();
+
+    }
+
     void Flip()
     {
         facingRight = !facingRight;
