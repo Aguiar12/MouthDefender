@@ -21,7 +21,9 @@ public class InputRead : MonoBehaviour {
 	void Update () {
 		float currentMoveSpeed = currentController.GetComponent<PcController>().getWalkInput();
 		playerRef.GetComponent<PlayerControl>().move(currentMoveSpeed);
-			
+		if(currentController.GetComponent<PcController>().verifyJumpInput()){
+			playerRef.GetComponent<PlayerControl>().jump();
+		}
 	}
 
 	//void /// <summary>

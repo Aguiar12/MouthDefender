@@ -44,6 +44,7 @@ public class PcController : MonoBehaviour, IControllerInterface {
 	
 	// Update is called once per frame
 	void Update () {
-		walkingSpeed = Input.GetAxis("Horizontal");        	
+		walkingSpeed = Input.GetAxis("Horizontal");  
+        isJumping = Input.GetButtonDown("Jump");      	
 	}
 }

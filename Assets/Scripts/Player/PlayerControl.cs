@@ -4,31 +4,26 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour
 {
     public bool facingRight = true;
-    public bool jump = false;
+    public float moveForce = 500f;
+    public float maxSpeed = 5f;
+    public float jumpForce = 2200f;
 
-    public float moveForce = 250f;
-    public float maxSpeed = 2f;
-    public float jumpForce = 0.0000000005f;
-
-    //private Transform groundCheck;
-    //private bool grounded = false;
+    private Transform groundCheck;
+    private bool grounded = false;
     private Animator anim;
 
     private Rigidbody2D rigidBodyRef;
 
     void Awake()
     {
-        //groundCheck = transform.Find("groundCheck");
+        groundCheck = transform.Find("groundCheck");
         anim = GetComponent<Animator>();
         rigidBodyRef = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        //grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-/*
-        if(Input.GetButtonDown("Jump"))
-            jump = true;*/
+        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
     }
 
     void FixedUpdate() 
@@ -79,6 +74,15 @@ public class PlayerControl : MonoBehaviour
 		else if(inputForce < 0 && facingRight)
 			Flip();
 
+    }
+
+    public void jump(){
+        anim.SetTrigger("Pulo");
+
+        //int i = Random.Range(0, jumpClips.Length);
+        //AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
     }
 
     void Flip()
