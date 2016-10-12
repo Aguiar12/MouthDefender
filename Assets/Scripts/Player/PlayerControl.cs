@@ -77,12 +77,14 @@ public class PlayerControl : MonoBehaviour
     }
 
     public void jump(){
-        anim.SetTrigger("Pulo");
+        if(grounded){
+            anim.SetTrigger("Pulo");
 
-        //int i = Random.Range(0, jumpClips.Length);
-        //AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+            //int i = Random.Range(0, jumpClips.Length);
+            //AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
 
-        GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+        }
     }
 
     void Flip()
