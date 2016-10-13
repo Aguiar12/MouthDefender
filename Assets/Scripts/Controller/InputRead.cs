@@ -4,9 +4,7 @@ using System.Collections;
 public class InputRead : MonoBehaviour {
 
 	public GameObject playerRef;
-
 	public GameObject currentController;
-
 
 	void Awake()
 	{
@@ -23,6 +21,9 @@ public class InputRead : MonoBehaviour {
 		playerRef.GetComponent<PlayerControl>().move(currentMoveSpeed);
 		if(currentController.GetComponent<PcController>().verifyJumpInput()){
 			playerRef.GetComponent<PlayerControl>().jump();
+		}
+		if(currentController.GetComponent<PcController>().verifyAttkInput()){
+			playerRef.GetComponent<PlayerControl>().attack();
 		}
 	}
 

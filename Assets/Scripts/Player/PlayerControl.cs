@@ -83,8 +83,12 @@ public class PlayerControl : MonoBehaviour
             //int i = Random.Range(0, jumpClips.Length);
             //AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
 
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+            rigidBodyRef.AddForce(new Vector2(0f, jumpForce));
         }
+    }
+
+    public void attack(){
+        anim.SetTrigger("Ataque");
     }
 
     void Flip()
