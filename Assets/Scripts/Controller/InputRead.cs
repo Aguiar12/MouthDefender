@@ -16,15 +16,11 @@ public class InputRead : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		float currentMoveSpeed = currentController.GetComponent<PcController>().getWalkInput();
-		playerRef.GetComponent<PlayerControl>().move(currentMoveSpeed);
+	void Update () {		
 		if(currentController.GetComponent<PcController>().verifyJumpInput()){
 			playerRef.GetComponent<PlayerControl>().jump();
 		}
-		if(currentController.GetComponent<PcController>().verifyAttkInput()){
-			playerRef.GetComponent<PlayerControl>().attack();
-		}
+		
 	}
 
 	//void /// <summary>
@@ -32,7 +28,8 @@ public class InputRead : MonoBehaviour {
 	// /// </summary>
 	void FixedUpdate()
 	{
-		
+		float currentMoveSpeed = currentController.GetComponent<PcController>().getWalkInput();
+		playerRef.GetComponent<PlayerControl>().move(currentMoveSpeed);
 	}
 
 	// void /// <summary>
@@ -41,6 +38,8 @@ public class InputRead : MonoBehaviour {
 	// /// </summary>
 	void LateUpdate()
 	{
-		
+		if(currentController.GetComponent<PcController>().verifyAttkInput()){
+			playerRef.GetComponent<PlayerControl>().attack();
+		}	
 	}
 }

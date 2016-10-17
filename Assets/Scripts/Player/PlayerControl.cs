@@ -14,6 +14,9 @@ public class PlayerControl : MonoBehaviour
 
     private Rigidbody2D rigidBodyRef;
 
+    void Start(){
+    }
+
     void Awake()
     {
         groundCheck = transform.Find("groundCheck");
@@ -97,6 +100,7 @@ public class PlayerControl : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+        
     }
         
 }
