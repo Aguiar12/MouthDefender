@@ -47,7 +47,10 @@ TagManager:
   - name: Background
     uniqueID: 2661742757
     locked: 0
-  - name: Dentes
+  - name: DentesCima
+    uniqueID: 3424129271
+    locked: 0
+  - name: DentesBaixo
     uniqueID: 146493937
     locked: 0
   - name: Ground
