@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 
 //Classe responsável por gerenciar todo o Menu Principal
@@ -54,10 +55,12 @@ public class ControladorMenuPrincipal : MonoBehaviour {
         if(musicSound){
             musicSound = false;
             GameObject.Find("Mute - Music").GetComponent<UnityEngine.UI.Image>().sprite = (Sprite)AssetDatabase.LoadAssetAtPath("Assets/Sprites/Ui/MenuPrincipal/botao_musica_wx.png", typeof(Sprite));
+            GameObject.Find("MusicSound").GetComponent<AudioSource>().mute = true;
         }
         else if(!musicSound){
             musicSound = true;
             GameObject.Find("Mute - Music").GetComponent<UnityEngine.UI.Image>().sprite = (Sprite)AssetDatabase.LoadAssetAtPath("Assets/Sprites/Ui/MenuPrincipal/botao_musica_md.png", typeof(Sprite));
+            GameObject.Find("MusicSound").GetComponent<AudioSource>().mute = false;
         }   
 
     }
