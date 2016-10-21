@@ -9,6 +9,8 @@ public class ControladorMenuPrincipal : MonoBehaviour {
     // Botão Start // Ao clicar no botão ele carrega a cena "LevelSelect"
     private string level = "LevelSelect";
     private int language;
+    private bool sfxSound;
+    private bool musicSound;
 
     public void Botao_start() {
 
@@ -46,6 +48,34 @@ public class ControladorMenuPrincipal : MonoBehaviour {
 
     }
 
+    //Botão de mutar a música do jogo // Ao clicar a música do jogo deve ser desabilitado e o sprite alterado
+    public void botao_MuteMusic(){
+
+        if(musicSound){
+            musicSound = false;
+            GameObject.Find("Mute - Music").GetComponent<UnityEngine.UI.Image>().sprite = (Sprite)AssetDatabase.LoadAssetAtPath("Assets/Sprites/Ui/MenuPrincipal/botao_musica_wx.png", typeof(Sprite));
+        }
+        else if(!musicSound){
+            musicSound = true;
+            GameObject.Find("Mute - Music").GetComponent<UnityEngine.UI.Image>().sprite = (Sprite)AssetDatabase.LoadAssetAtPath("Assets/Sprites/Ui/MenuPrincipal/botao_musica_md.png", typeof(Sprite));
+        }   
+
+    }
+
+    //Botão de mutar o som do jogo // Ao clicar o som do jogo deve ser desabilitado e o sprite alterado
+    public void botao_MuteSFX(){
+
+        if(sfxSound){
+            sfxSound = false;
+            GameObject.Find("Mute - SFX").GetComponent<UnityEngine.UI.Image>().sprite = (Sprite)AssetDatabase.LoadAssetAtPath("Assets/Sprites/Ui/MenuPrincipal/botao_sfx_wx.png", typeof(Sprite));
+        }
+        else if(!sfxSound){
+            sfxSound = true;
+            GameObject.Find("Mute - SFX").GetComponent<UnityEngine.UI.Image>().sprite = (Sprite)AssetDatabase.LoadAssetAtPath("Assets/Sprites/Ui/MenuPrincipal/botao_sfx_md.png", typeof(Sprite));
+        }   
+
+    }
+
     //Botão de Idiomas // Ao clicar ele altera os sprites para o idioma que o usuário desejar
     public void botao_Idioma(){
 
@@ -62,6 +92,8 @@ public class ControladorMenuPrincipal : MonoBehaviour {
     void Start(){
 
         language = 0;
+        sfxSound = true;
+        musicSound = true;
     
     }
 
