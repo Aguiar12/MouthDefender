@@ -5,6 +5,14 @@ AnimatorOverrideController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Carie2AOC
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Name: Carie02AOC
+  m_Controller: {fileID: 9100000, guid: 9ccf9ea12cc2d5442a3a7f40437e2dc3, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: fb6ad22173018a844963463e62327673, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d886625ad61921c4b90a0b1ede7f198e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fb1af23f8e9eca94e99d35367a766d7c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 87684991c2a5a6d4ea1052d2a9be70fc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f7875c58be82bf44fba91215e4f2be41, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 99c1d639b3554bf44ad1012287798aa2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6efd363f5f5487344bcbf838c7ce4cbc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d4952c428168f8f498f0429b43a7403d, type: 2}

@@ -6,5 +6,13 @@ AnimatorOverrideController:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Placa01AOC
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: 9ccf9ea12cc2d5442a3a7f40437e2dc3, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: fb6ad22173018a844963463e62327673, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8a69cd132c185ca4381dbf0b31f5ec16, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fb1af23f8e9eca94e99d35367a766d7c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d1240013e9b413044bc3789e7a551b2a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f7875c58be82bf44fba91215e4f2be41, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0a3021428566aea4b82dae800e792366, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6efd363f5f5487344bcbf838c7ce4cbc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 99ddf38e2ad91754791a030833f1cf23, type: 2}
